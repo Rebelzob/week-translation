@@ -1,7 +1,11 @@
 ---
 import daysJs from 'dayjs'
 
-const now = daysJs()
-console.log(now)
+function calculateDates(startDate: string, weeks: number) {
+  const baseDate = daysJs(startDate)
+  const resultDate = baseDate.add(weeks, 'week')
+  return resultDate.format('YYYY-MM-DD')
+}
 
+export { calculateDates}
 ---
